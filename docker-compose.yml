@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: aiogram_bot
+    environment:
+      TELEGRAM_API_TOKEN: "your-telegram-api-token"
+    volumes:
+      - .:/app
+    restart: unless-stopped
